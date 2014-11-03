@@ -108,30 +108,39 @@ public class CalendarView extends JFrame {
 		lblSunday.setBounds(680, 76, 100, 20);
 		contentPane.add(lblSunday);
 		
+		// Oprettet tidsskemaet i kalenderen
 		String[] timeOfDay = {""};
 		Object [][] specificTime= 
 		{
 			{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
 			
-		};
-			
+		};	
 		tableTime = new JTable(specificTime,timeOfDay);
 		tableTime.setBounds(10, 100, 75, 600);
 		tableTime.setRowHeight(40);
 		tableTime.setAlignmentY(CENTER_ALIGNMENT);
 		contentPane.add(tableTime);
 		
+		// Oprettet mandag i kalenderen
+		int test1 = 45;
+		String test2 = "Hej";
 		String[] monday = {"Monday"};
 		Object [][] eventsMonday= 
 		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+				{"Wuhuu!"}
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
 		};		
+//		eventsMonday.add 
+		
+//		Undersøg hvordan man tilføjer events til et array og gemmer dem i arrayet. 
+		
 		table = new JTable(eventsMonday,monday);
 		table.setBounds(100, 100, 100, 600);
-		table.setRowHeight(40);
+		
+		table.setRowHeight(0,40);
 		contentPane.add(table);
 		
-		
+		// Oprettet tirsdag i kalenderen
 		String[] tuesday = {"Tuesday"};
 		Object [][] eventsTuesday= 
 		{
@@ -142,7 +151,7 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-		
+		// Oprettet onsdag i kalenderen	
 		String[] wednesday = {"Wednesday"};
 		Object [][] eventsWednesday= 
 		{
@@ -153,7 +162,7 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-	
+		// Oprettet torsdag i kalenderen
 		String[] thursday = {"Thursday"};
 		Object [][] eventsThursday= 
 		{
@@ -164,8 +173,7 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-		
-		
+		// Oprettet fredag i kalenderen
 		String[] friday = {"Friday"};
 		Object [][] eventsFriday= 
 		{
@@ -176,8 +184,7 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-		
-	
+		// Oprettet lørdag i kalenderen
 		String[] saturday = {"Saturday"};
 		Object [][] eventsSaturday= 
 		{
@@ -188,8 +195,7 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-		
-		
+		// Oprettet søndag i kalenderen
 		String[] sunday = {"Sunday"};
 		Object [][] eventsSunday= 
 		{
@@ -200,10 +206,6 @@ public class CalendarView extends JFrame {
 		table.setRowHeight(40);
 		contentPane.add(table);
 		
-		
-//		JScrollBar scrollBar = new JScrollBar();
-//		scrollBar.setBounds(792, 144, 15, 400);
-//		contentPane.add(scrollBar);
 		
 	}
 }
