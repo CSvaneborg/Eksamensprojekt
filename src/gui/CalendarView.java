@@ -29,6 +29,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.table.*;
+import javax.swing.text.JTextComponent;
 
 import logic.Events;
 
@@ -134,6 +135,8 @@ public class CalendarView extends JFrame {
 		tableTime.setShowGrid(false);
 		tableTime.setEnabled(false);
 		contentPane.add(tableTime);
+      
+
 		
 //		int minutes = 100;
 //		Events.setEventName("Vøs3");
@@ -144,12 +147,45 @@ public class CalendarView extends JFrame {
 //			int minutes = 100;
 //			
 //		}
-		String col[]={""};
-		DefaultTableModel tableModel = new DefaultTableModel (col,0);
+		
+		//String col[]={"hej"};
+		DefaultTableModel tableModel = new DefaultTableModel (0,7);
+//		 hej = new DefaultTableModel (1,1);
 		tableMonday = new JTable(tableModel);
-		Object[] objs = {"Hvor meget kan der stå i et felt"};
-		tableModel.addRow(objs);
-//		tableModel.addRow(objs);
+		Object[] objs1 = {"Mandag","Tirsdag","Onsdag", "Torsdag","Fredag","Lørdag", "Søndag"};
+		Object[] objs2 = {"test4","test 2"};
+		tableMonday.setRowHeight(1,20);
+		tableMonday.setRowHeight(2,60);
+//		tableMonday.setRowHeight(3,200);
+//		tableMonday.setRowHeight(40);
+//		tableMonday.setRowHeight(0,300);
+		tableMonday.setBackground(Color.yellow);
+//		tableModel.set
+		int number = tableMonday.getHeight();
+//		tableMonday.setRowHeight(10);
+		
+
+//		tableMonday.add(objs1);
+		tableModel.addRow(objs1);
+		tableModel.addRow(objs1);
+		tableModel.addRow(objs2);
+		tableModel.addRow(objs2);
+		tableModel.addRow(objs1);
+//		int number = tableModel.getRowCount();
+		System.out.println(number);
+
+//		tableMonday = new JTable(eventsMonday,monday);
+		tableMonday.setBounds(100, 100, 700, 600);
+//		tableMonday.setRowHeight(40);
+		tableMonday.setBackground(Color.lightGray);
+		tableMonday.setShowGrid(false);
+		tableMonday.setEnabled(false);
+		contentPane.add(tableMonday);
+		
+		
+		
+		
+
 //		tableModel.addRow(objs);
 		
 //		tableMonday = new JTable(monday);
@@ -162,95 +198,95 @@ public class CalendarView extends JFrame {
 //		};		
 //		
 //		tableMonday = new JTable(eventsMonday,monday);
-		tableMonday.setBounds(100, 100, 100, 600);
-		tableMonday.setRowHeight(40);
-		tableMonday.setBackground(Color.lightGray);
-		tableMonday.setShowGrid(false);
-		tableMonday.setEnabled(false);
-		contentPane.add(tableMonday);
+//				tableMonday.setBounds(100, 100, 100, 600);
+//				tableMonday.setRowHeight(40);
+//				tableMonday.setBackground(Color.lightGray);
+//				tableMonday.setShowGrid(false);
+//				tableMonday.setEnabled(false);
+//				contentPane.add(tableMonday);
 		
 		// Oprettet tirsdag i kalenderen
-		String[] tuesday = {""};
-		Object [][] eventsTuesday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};
-		tableTuesday = new JTable(eventsTuesday,tuesday);
-		tableTuesday.setBounds(200, 100, 100, 600);
-		tableTuesday.setRowHeight(40);
-		tableTuesday.setBackground(Color.lightGray);
-		tableTuesday.setShowGrid(false);
-		tableTuesday.setEnabled(false);
-		contentPane.add(tableTuesday);
+//		String[] tuesday = {""};
+//		Object [][] eventsTuesday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};
+//		tableTuesday = new JTable(eventsTuesday,tuesday);
+//		tableTuesday.setBounds(200, 100, 100, 600);
+//		tableTuesday.setRowHeight(40);
+//		tableTuesday.setBackground(Color.lightGray);
+//		tableTuesday.setShowGrid(false);
+//		tableTuesday.setEnabled(false);
+//		contentPane.add(tableTuesday);
 //		
 		// Oprettet onsdag i kalenderen	
-		String[] wednesday = {""};
-		Object [][] eventsWednesday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};
-		tableWednesday = new JTable(eventsWednesday,wednesday);
-		tableWednesday.setBounds(300, 100, 100, 600);
-		tableWednesday.setRowHeight(40);
-		tableWednesday.setBackground(Color.lightGray);
-		tableWednesday.setShowGrid(false);
-		tableWednesday.setEnabled(false);
-		contentPane.add(tableWednesday);
+//		String[] wednesday = {""};
+//		Object [][] eventsWednesday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};
+//		tableWednesday = new JTable(eventsWednesday,wednesday);
+//		tableWednesday.setBounds(300, 100, 100, 600);
+//		tableWednesday.setRowHeight(40);
+//		tableWednesday.setBackground(Color.lightGray);
+//		tableWednesday.setShowGrid(false);
+//		tableWednesday.setEnabled(false);
+//		contentPane.add(tableWednesday);
 		
 		// Oprettet torsdag i kalenderen
-		String[] thursday = {""};
-		Object [][] eventsThursday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};
-		tableThursday = new JTable(eventsThursday,thursday);
-		tableThursday.setBounds(400, 100, 100, 600);
-		tableThursday.setRowHeight(40);
-		tableThursday.setBackground(Color.lightGray);
-		tableThursday.setShowGrid(false);
-		tableThursday.setEnabled(false);
-		contentPane.add(tableThursday);
+//		String[] thursday = {""};
+//		Object [][] eventsThursday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};
+//		tableThursday = new JTable(eventsThursday,thursday);
+//		tableThursday.setBounds(400, 100, 100, 600);
+//		tableThursday.setRowHeight(40);
+//		tableThursday.setBackground(Color.lightGray);
+//		tableThursday.setShowGrid(false);
+//		tableThursday.setEnabled(false);
+//		contentPane.add(tableThursday);
 		
 		// Oprettet fredag i kalenderen
-		String[] friday = {""};
-		Object [][] eventsFriday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};		
-		tableFriday = new JTable(eventsFriday,friday);
-		tableFriday.setBounds(500, 100, 100, 600);
-		tableFriday.setRowHeight(40);
-		tableFriday.setBackground(Color.lightGray);
-		tableFriday.setShowGrid(false);
-		tableFriday.setEnabled(false);
-		contentPane.add(tableFriday);
+//		String[] friday = {""};
+//		Object [][] eventsFriday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};		
+//		tableFriday = new JTable(eventsFriday,friday);
+//		tableFriday.setBounds(500, 100, 100, 600);
+//		tableFriday.setRowHeight(40);
+//		tableFriday.setBackground(Color.lightGray);
+//		tableFriday.setShowGrid(false);
+//		tableFriday.setEnabled(false);
+//		contentPane.add(tableFriday);
 		
 		// Oprettet lørdag i kalenderen
-		String[] saturday = {""};
-		Object [][] eventsSaturday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};		
-		tableSaturday = new JTable(eventsSaturday,saturday);
-		tableSaturday.setBounds(600, 100, 100, 600);
-		tableSaturday.setRowHeight(40);
-		tableSaturday.setBackground(Color.lightGray);
-		tableSaturday.setShowGrid(false);
-		tableSaturday.setEnabled(false);
-		contentPane.add(tableSaturday);
-		
+//		String[] saturday = {""};
+//		Object [][] eventsSaturday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};		
+//		tableSaturday = new JTable(eventsSaturday,saturday);
+//		tableSaturday.setBounds(600, 100, 100, 600);
+//		tableSaturday.setRowHeight(40);
+//		tableSaturday.setBackground(Color.lightGray);
+//		tableSaturday.setShowGrid(false);
+//		tableSaturday.setEnabled(false);
+//		contentPane.add(tableSaturday);
+//		
 		// Oprettet søndag i kalenderen
-		String[] sunday = {""};
-		Object [][] eventsSunday= 
-		{
-				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
-		};
-		tableSunday = new JTable(eventsSunday,sunday);
-		tableSunday.setBounds(700, 100, 100, 600);
-		tableSunday.setRowHeight(40);
-		tableSunday.setBackground(Color.lightGray);
-		tableSunday.setShowGrid(false);
-		tableSunday.setEnabled(false);
-		contentPane.add(tableSunday);
+//		String[] sunday = {""};
+//		Object [][] eventsSunday= 
+//		{
+//				{"8:00"},{"9:00"},{"10:00"},{"11:00"},{"12:00"},{"13:00"},{"14:00"},{"15:00"},{"16:00"},{"17:00"},{"18:00"},{"19:00"},{"20:00"},{"21:00"},{"22:00"},
+//		};
+//		tableSunday = new JTable(eventsSunday,sunday);
+//		tableSunday.setBounds(700, 100, 100, 600);
+//		tableSunday.setRowHeight(40);
+//		tableSunday.setBackground(Color.lightGray);
+//		tableSunday.setShowGrid(false);
+//		tableSunday.setEnabled(false);
+//		contentPane.add(tableSunday);
 	}
 }
