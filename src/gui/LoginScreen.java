@@ -68,7 +68,7 @@ public class LoginScreen extends JFrame {
 		btnLogIn.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) 
 			{
-				CalendarView frame = new CalendarView();
+				WeekView frame = new WeekView();
 				frame.setVisible(true);
 			}
 		});
