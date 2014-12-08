@@ -10,7 +10,7 @@ import com.google.gson.GsonBuilder;
 
 import JsonClasses.*;
 
-public class TCPClient {
+public class TCPClient2 {
 	
 	
 	public static String toServer(String sendToServer) throws Exception {

@@ -32,6 +32,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.text.JTextComponent;
 
+import logic.Controller;
 import logic.Events;
 
 
@@ -47,6 +48,7 @@ public class WeekView extends JFrame {
 	private JTable tableFriday;
 	private JTable tableSaturday;
 	private JTable tableSunday;
+	private JTextField txtHej;
 
 	
 
@@ -298,6 +300,42 @@ public class WeekView extends JFrame {
 		});
 		btnExit.setBounds(700, 600, 100, 50);
 		contentPane.add(btnExit);
+		
+		txtHej = new JTextField();
+		txtHej.setText("Hej");
+		txtHej.setBounds(1010, 76, 134, 28);
+		contentPane.add(txtHej);
+		txtHej.setColumns(10);
+		
+		JLabel lblOpretNyKalender = new JLabel("Opret ny kalender");
+		lblOpretNyKalender.setBounds(912, 48, 147, 16);
+		contentPane.add(lblOpretNyKalender);
+		
+		JLabel lblIndtastNavnP = new JLabel("Indtast navn på kalender:");
+		lblIndtastNavnP.setBounds(833, 80, 165, 16);
+		contentPane.add(lblIndtastNavnP);
+		
+		JButton btnOpretKalender = new JButton("Opret kalender");
+		btnOpretKalender.setBounds(857, 106, 237, 29);
+		contentPane.add(btnOpretKalender);
+		btnOpretKalender.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) 
+			{
+				String calendarName =txtHej.getText();
+				boolean createdCalendar;
+				createdCalendar = Controller.createCalendar(calendarName,"1", "casv13ad", "1");
+				if (createdCalendar)
+				{
+					System.out.println("succes");
+				}
+				else
+				{
+					System.out.println("Chaos");
+				}
+		
+				
+			}
+		});
 	
 	
 	}

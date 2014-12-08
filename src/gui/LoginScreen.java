@@ -66,10 +66,14 @@ public class LoginScreen extends JFrame {
 		btnLogIn.setBounds(236, 166, 143, 29);
 		contentPane.add(btnLogIn);
 		btnLogIn.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) 
+			public void mouseClicked(MouseEvent e)
 			{
-				WeekView frame = new WeekView();
+				try{
+				DayView frame = new DayView();
 				frame.setVisible(true);
+				}catch (Exception e2){
+					e2.printStackTrace();
+				}
 			}
 		});
 		
