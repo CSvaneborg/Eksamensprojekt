@@ -45,10 +45,10 @@ public class DayView extends JFrame {
 		
 		String whichDayIsIt = "default";
 		//Test af hvordan det vil se ud med specifik dag.
-		whichDayIsIt= "Monday";
+		whichDayIsIt= "Dayview";
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 550, 600);	
+		setBounds(100, 100, 1200, 750);	
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.lightGray);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,7 +58,7 @@ public class DayView extends JFrame {
 		JLabel lblDkCalendar = new JLabel("DØK CALENDAR");
 		lblDkCalendar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDkCalendar.setFont(new Font("Lucida Grande", Font.BOLD, 30));
-		lblDkCalendar.setBounds(75, 10, 550, 50);
+		lblDkCalendar.setBounds(75, 10, 600, 50);
 		contentPane.add(lblDkCalendar);
 		
 		JLabel lblTime = new JLabel(whichDayIsIt);
@@ -70,18 +70,17 @@ public class DayView extends JFrame {
 		JTextArea textArea = new JTextArea();
 		textArea.setLineWrap(true);
 		textArea.setText(Controller.getCBSCalendar());
-		textArea.setBounds(35, 108, 509, 289);
+		textArea.setBounds(35, 75, 1000, 400);
 		contentPane.add(textArea);
 		
 		JTextArea textArea_1 = new JTextArea(Controller.getWeather());
 		textArea_1.setLineWrap(true);
-		textArea_1.setBounds(35, 423, 509, 37);
+		textArea_1.setBounds(35, 500, 509, 37);
 		contentPane.add(textArea_1);
 		
 		JTextArea textArea_2 = new JTextArea(Controller.getQOTD());
 		textArea_2.setLineWrap(true);
 		textArea_2.setBounds(35, 482, 509, 90);
 		contentPane.add(textArea_2);
-		
 	}
 }
